@@ -1,0 +1,51 @@
+import java.util.Random;
+public class Application {
+	public static void main (String [] args) {
+		
+		int array [][] = new int [8][8];
+		for(int i = 0; i<8; i++){
+			for(int j = 0; j<8; j++) {
+				array[i][j] = 0; 
+			}
+		}
+		int possibleMoves [] = {-1,1,-2,2};
+
+		Random random = new Random();
+		int xIndex = random.nextInt(4);
+		int yIndexSmallX = random.nextInt(2)+2;
+		int yIndexBigX = random.nextInt(2);
+		int startX = random.nextInt(8);
+		int startY = random.nextInt(8);
+		int moveNumber = 1;
+		int moveX = 0;
+		int moveY = 0;
+
+		moveX = possibleMoves[xIndex];
+		
+		if (moveX == 1 || moveX == -1) 
+			moveY = possibleMoves[yIndexSmallX];
+		else if (moveX == 2 || moveX == -2)
+			moveY = possibleMoves[yIndexBigX];
+		
+		array[startX][startY] = 0;
+		int x = startX;
+		int y = startY;
+		
+		do {
+		x = x + moveX;
+		y = y + moveY;
+		
+		while (x<0 || x>7) {
+			x = x + moveX;
+		}
+		while (y<0 || y>7) {
+			y = y + moveY;
+		}
+		array[x][y] = moveNumber;
+		
+		moveNumber++;
+		} while (array[x][y]!= 0); 
+		
+		System.out.println(array[startX][startY] + ", "+ moveNumber+", "+ array[x][y]);
+	}
+}

@@ -1,0 +1,23 @@
+import java.util.Random;
+public class Application {
+	public static void main (String [] args) {
+		Random random = new Random();
+		int moveNumber = 0;
+
+		int array [][] = new int [8][8];
+		for(int i = 0; i<8; i++){
+			for(int j = 0; j<8; j++) {
+				array[i][j] = 0; 
+			}
+		}
+		int moveX [] = {1,-1,2,-2};
+		
+		System.out.println(random.nextInt(4));
+		
+		
+		
+		
+		
+		
+	}
+}

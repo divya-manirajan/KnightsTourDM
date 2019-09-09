@@ -1,0 +1,31 @@
+import java.util.Random;
+public class Application {
+	public static void main (String [] args) {
+		Random random = new Random();
+		int xIndex = random.nextInt(4);
+		int yIndexSmallX = random.nextInt(2)+2;
+		int yIndexBigX = random.nextInt(2);
+		int moveNumber = 0;
+		int moveX;
+		int moveY;
+		int possibleMoveArray [] = {-1,1,-2,2};
+		int array [][] = new int [8][8];
+		for(int i = 0; i<8; i++){
+			for(int j = 0; j<8; j++) {
+				array[i][j] = 0; 
+			}
+		}
+		
+		moveX = moveXArray[index];
+		
+		if (moveX == 1 || moveX == -1) 
+			moveY = 2;
+		
+		
+		
+		System.out.println(yIndexSmallX);
+		
+		
+		
+	}
+}
